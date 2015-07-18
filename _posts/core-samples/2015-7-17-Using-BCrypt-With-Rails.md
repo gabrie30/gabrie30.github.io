@@ -24,6 +24,7 @@ There are a few handy methods that will accomplish mostly what we want.
 ```ruby
 bc_obj = BCrypt::Password.create(“actualPassword123”)
 ```
+
 The nice thing about BCrypt is that the password digest will be salted for us...Our users can thank us later!
 
 This creates a password digest object that we can save to the database, and also call other BCrypt methods on.
