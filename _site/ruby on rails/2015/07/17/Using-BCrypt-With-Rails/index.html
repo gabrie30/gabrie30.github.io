@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Tags</title>
+    <title>Using Bcrypt With Rails</title>
     
     <meta name="author" content="Jay Gabriels">
 
@@ -118,71 +118,122 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>Tags </h1>
+  <h1>Using Bcrypt With Rails <small></small></h1>
 </div>
 
-<div class="row">
+<div class="row post-full">
   <div class="col-xs-12">
-    
+    <div class="date">
+      <span>17 July 2015</span>
+    </div>
+    <div class="content">
+      
+<h2 id="the-wonders-of-bcrypt">The Wonders of BCrypt</h2>
 
-<ul class="tag_box inline">
+<p>If you are tinkering around with creating your own authenticaion BCrypt is a wonderful gem to use for the job. Although I would reccomend that if you are building something is not for learning purposes that you stick with one of the numerous auth gems that are tried and true.</p>
+
+<p>That being said if you are still looking for the rush tha comes along with building your own auth lets go over how to use BCrypt.</p>
+
+<p>First things first, lets install the gem, which can be a little bit tricky.</p>
+
+<p><code>ruby
+gem 'bcrypt-ruby', require: 'bcrypt'
+</code></p>
+
+<p>There are a few handy methods that will accomplish mostly what we want.</p>
+
+<p><code>ruby
+bc_obj = BCrypt::Password.create(“actualPassword123”)
+</code></p>
+
+<p>The nice thing about BCrypt is that the password digest will be salted for us…Our users can thank us later!</p>
+
+<p>This creates a password digest object that we can save to the database, and also call other BCrypt methods on.</p>
+
+<p>This is an important point and one that can easily trip you up. When you save this object to the database, it will be saved as a string. So, when you fetch a users password digest for authentication, you cannot call methods on it. So what you need to do is turn the string back into a BCrypt object. Heres how…</p>
+
+<p><code>ruby
+bc_obj = BCrypt::Password.new(password_digest)
+</code></p>
+
+<p>Now you’re back to a BCrypt object! Now that we have an object we can call methods on it. Most likely you are going to want to use the password that a user submits to a login form. To see if the password they entered is the same as the password in the database you can use</p>
+
+<p><code>ruby
+(bc_obj).is_password?("password-user-entered-in-form")
+</code></p>
+
+<p>This will return true or false depending on if the passwords match.</p>
+
+    </div>
+
+  
+    <ul class="tag_box inline">
+      <li><i class="glyphicon glyphicon-open"></i></li>
+      
+      
+
+
+  
+     
+    	<li><a href="/categories.html#ruby on rails-ref">
+    		ruby on rails <span>2</span>
+    	</a></li>
     
   
+
+
+    </ul>
+    
+
+  
+    <ul class="tag_box inline">
+      <li><i class="glyphicon glyphicon-tags"></i></li>
+      
+      
 
 
   
      
     	<li><a href="/tags.html#BCrypt-ref">BCrypt <span>1</span></a></li>
-     
-    	<li><a href="/tags.html#Rails/Backbone-ref">Rails/Backbone <span>1</span></a></li>
     
   
 
 
 
-</ul>
-
-
- 
-  <h2 id="BCrypt-ref">BCrypt</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/ruby%20on%20rails/2015/07/17/Using-BCrypt-With-Rails">Using Bcrypt With Rails</a></li>
-      	
-      
+    </ul>
     
   
-
-
-
-  </ul>
- 
-  <h2 id="Rails/Backbone-ref">Rails/Backbone</h2>
-  <ul>
-      
+    <hr>
+    <ul class="pagination">
+    
+      <li class="prev disabled"><a>&larr; Previous</a></li>
+    
+      <li><a href="/archive.html">Archive</a></li>
+    
+      <li class="next"><a href="/ruby%20on%20rails/2015/07/31/Using-Rails-Associations-In-Backbone" title="Using Rails Associations In Backbone">Next &raquo;</a></li>
+    
+    </ul>
+    <hr>
     
 
 
-  
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
     
-      
-      	
-      	<li><a href="/ruby%20on%20rails/2015/07/31/Using-Rails-Associations-In-Backbone">Using Rails Associations In Backbone</a></li>
-      	
-      
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
     
-  
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-
-  </ul>
 
 
   </div>

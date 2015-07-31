@@ -8,4 +8,5 @@ http://gabrie30.github.io/rss.xml
 http://gabrie30.github.io/sitemap.txt
 http://gabrie30.github.io/tags.html
 
-http://gabrie30.github.io/lessons/2011/12/29/jekyll-introduction
+http://gabrie30.github.io/ruby%20on%20rails/2015/07/31/Using-Rails-Associations-In-Backbone
+http://gabrie30.github.io/ruby%20on%20rails/2015/07/17/Using-BCrypt-With-Rails

@@ -35,4 +35,10 @@ This is an important point and one that can easily trip you up. When you save th
 bc_obj = BCrypt::Password.new(password_digest)
 ```
 
-Now you're back to a BCrypt object! Pretty cool, because now you can call the numerous methods that come along with BCrypt!
+Now you're back to a BCrypt object! Now that we have an object we can call methods on it. Most likely you are going to want to use the password that a user submits to a login form. To see if the password they entered is the same as the password in the database you can use 
+
+```ruby
+(bc_obj).is_password?("password-user-entered-in-form")
+```
+
+This will return true or false depending on if the passwords match.
