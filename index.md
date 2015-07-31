@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Jay Gabriels
-tagline: Will blog for code
+title: What the Heck, Lets Blog
+tagline: -Jay Gabez
 ---
 {% include JB/setup %}
 
