@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Tags</title>
+    <title>Backbone Code Organization</title>
     
     <meta name="author" content="Jay Gabez">
 
@@ -118,23 +118,61 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>Tags </h1>
+  <h1>Backbone Code Organization <small></small></h1>
 </div>
 
-<div class="row">
+<div class="row post-full">
   <div class="col-xs-12">
-    
+    <div class="date">
+      <span>13 August 2015</span>
+    </div>
+    <div class="content">
+      
+<h2 id="code-organization-in-backbonejs">Code Organization in Backbone.js</h2>
 
-<ul class="tag_box inline">
-    
+<p>One of the hardest thing for me to figure out with Backbone is how to organize my code. The philosophy of backbone is that there is no correct or incorret way. You are free to organize it however you wish. This leaves a lot up to the programmer and quite frankly if you’re not experience with this sort of thing, can be absolutely overwhelming.</p>
+
+<p>The way I’ve been starting to think about my oranization is thinking about how the DOM itself is organized. The DOM is essentially one large tree, with the root being the HTML tag. In most of my backbone apps this would be my index page. However inside the index page I will have several subviews, the even perhaps within a subview, I will have a subview of the subview.</p>
+
+<p>My index view’s template will mostly have empty divs. I will then use the subviews to populate those divs. This pattern continues down the subview chain.</p>
+
+<p>The only time I replace the contents of the DOM completely is when the user is being redirected to something like the about page. This type of manipulation would be done ony in the router.</p>
+
+<p>Another aspect of code organization that has helped me out is fetching my collection before initializing the app. That way once the app loads I already have all of the models that are stored in the database. Another benefits is that I have access to all the models anywhere in the application. Typically I will store it in something like…MyAppName.Collections.myCollection, which I can then call collection methods on from anywhere in my application.</p>
+
+<p>Thinking about how you should organize your code in backbone is fun since there are so many possibilies. I think the best way to figure out what works best for you is just to experiment. So remember to have fun!</p>
+
+<p>If you have any tips, best practies, or resources please leave them in the comments below!</p>
+
+    </div>
+
   
+    <ul class="tag_box inline">
+      <li><i class="glyphicon glyphicon-open"></i></li>
+      
+      
 
 
   
      
-    	<li><a href="/tags.html#BCrypt-ref">BCrypt <span>1</span></a></li>
-     
-    	<li><a href="/tags.html#Rails/Backbone-ref">Rails/Backbone <span>1</span></a></li>
+    	<li><a href="/categories.html#backbone-ref">
+    		backbone <span>1</span>
+    	</a></li>
+    
+  
+
+
+    </ul>
+    
+
+  
+    <ul class="tag_box inline">
+      <li><i class="glyphicon glyphicon-tags"></i></li>
+      
+      
+
+
+  
      
     	<li><a href="/tags.html#Backbone-ref">Backbone <span>1</span></a></li>
     
@@ -142,69 +180,40 @@
 
 
 
-</ul>
-
-
- 
-  <h2 id="BCrypt-ref">BCrypt</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/ruby%20on%20rails/2015/07/17/Using-BCrypt-With-Rails">Using Bcrypt With Rails</a></li>
-      	
-      
+    </ul>
     
   
-
-
-
-  </ul>
- 
-  <h2 id="Rails/Backbone-ref">Rails/Backbone</h2>
-  <ul>
-      
+    <hr>
+    <ul class="pagination">
+    
+      <li class="prev"><a href="/ruby%20on%20rails/2015/07/31/Using-Rails-Associations-In-Backbone" title="Using Rails Associations In Backbone">&laquo; Previous</a></li>
+    
+      <li><a href="/archive.html">Archive</a></li>
+    
+      <li class="next disabled"><a>Next &rarr;</a>
+    
+    </ul>
+    <hr>
     
 
 
-  
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
     
-      
-      	
-      	<li><a href="/ruby%20on%20rails/2015/07/31/Using-Rails-Associations-In-Backbone">Using Rails Associations In Backbone</a></li>
-      	
-      
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
     
-  
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-
-  </ul>
- 
-  <h2 id="Backbone-ref">Backbone</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/backbone/2015/08/13/Backbone-Code-Organization">Backbone Code Organization</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
 
 
   </div>
