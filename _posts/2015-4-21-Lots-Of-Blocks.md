@@ -1,8 +1,8 @@
 ---
 layout: post
-category : Ruby on Rails
+category : Ruby
 tagline: ""
-tags : [Rails/Backbone]
+tags : [Ruby]
 ---
 {% include JB/setup %}
 
@@ -12,8 +12,11 @@ Some of the most useful built in Ruby methods like #each, #map, and #select, all
 
 ```ruby
 def say_hello
+
   yield
+
 end
+
 say_hello { puts ”hello” } #=> "hello”
 ```
 
@@ -23,8 +26,11 @@ The yield keyword can also take a parameter to pass into the block outside the f
 
 ```ruby
 def say_hello
+
   yield “hello there”
+
 end
+
 say_hello { | m | puts m } #=> “hello there”
 ```
 
@@ -35,19 +41,29 @@ Cool right?
 You can even call yield multiple times within the same function.
 ```ruby
 def say_hello
+
   yield
+
   yield
+
 end
+
 say_hello { puts “hello” }
+
 #=> hello
+
 #=> hello
 ```
 And lastly what if you forget provide a block to some method containing a yield? If you thought it would error, you’d be correct (more precisely it would be a LocalJumpError) unless you use the handy ruby method block_given?
 ```ruby
 def say_hello
+
    yield if block_given?
+
    puts "Anyone there?"
+
 end
+
 say_hello #=> "Anyone there?"
 ```
 Yes this methods function fits its name perfectly. It will only allow the yield to happen if a block is given in the first place, otherwise it will simply skip the yield and move on.
