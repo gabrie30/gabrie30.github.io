@@ -6,8 +6,6 @@ tags : [Ruby]
 ---
 {% include JB/setup %}
 
-### Lots of Blocks ###
-
 Some of the most useful built in Ruby methods like #each, #map, and #select, all have one thing in common, they all except blocks. Lets take a look at a simple block in ruby.
 
 ```ruby
