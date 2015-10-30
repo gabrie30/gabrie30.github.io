@@ -1,6 +1,6 @@
 ---
 layout: page
-title: What the Heck, Lets Blog
+title: The Humble Coder
 tagline: -Jay Gabez
 ---
 {% include JB/setup %}
