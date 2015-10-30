@@ -1,3 +1,11 @@
+---
+layout: post
+category : Ruby
+tagline: ""
+tags : [Ruby]
+---
+{% include JB/setup %}
+
 Something I found interesting about blocks in ruby is that they aren’t objects. The saying that everything in ruby is an object has been beaten into my head since day one, so to learn this was like finding out pigs actually can fly. So if blocks aren’t objects how can we pass them around? Thats where Procs come in. Procs are similar to blocks but are actually objects. You can create a proc by calling Proc.new and giving it a block
 
 ```
