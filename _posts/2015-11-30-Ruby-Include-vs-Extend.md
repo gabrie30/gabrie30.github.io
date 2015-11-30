@@ -1,8 +1,8 @@
 ---
 layout: post
-category : Algorithms
+category : Ruby
 tagline: ""
-tags : [Algorithms]
+tags : [Ruby]
 ---
 {% include JB/setup %}
 
