@@ -8,11 +8,11 @@ tags : [JavaScript, Ruby, Algorithms]
 
 ### Pigeonhole Principle
 
-I'm going to try to explain this example, but it might be easier just to look it up at Wikipedia. The TLDR; is something like this. If you have a n number of openings (for the pigeon to go inside), and p number of pigeons, if p > n, then its guarunteed that in one of the openings you will have to fit at least 2 pigeons. Seems pretty logical and can be applied algorithmically.
+I'm going to try to explain the Pidgeonhole Principle using this example, but it might be easier just to look it up at Wikipedia. The TLDR; is something like this. If you have n number of openings (for the pigeon to fit inside), and p number of pigeons, if p > n, then its guarunteed that in one of the openings you will have to fit at least 2 pigeons. Seems pretty logical and can be applied algorithmically.
 
-Given an array arr of n unique non-negative integers, how can you most efficiently find a non-negative integer that is not in the array?
+Given an array arr of n unique non-negative integers, how can you find a non-negative integer that is not in the array?
 
-The easiest way is to initialize an array which by default will have non existant values set to nil. Say arr = [1,2,4,0]. To solve this problem you will create a new array, call it my_arr and iterate over each element of arr taking its value and mapping it to the corresponding index of my_arr. Let me just show you and it should make sense - my_arr = [0,1,2,nil,4] now you just scan my_arr for a nil value and the index of that nil value is not in arr.  I'm not sure this answer is completely satisfying, because if you have a couple of very large numbers you are creating a very memory intense array. However, it is a good demonstration of the pigeonhole principal at work, after each iteration of arr you are squeezing or "pigeonholeing(sp?)" the numbers that are not in arr.
+The easiest way to demonstrate this principal at work is initialize an array, which in Ruby, by default will have non existant values set to nil. Say we have the original array arr = [1,2,4,0,7]. To solve this problem you will create a new array, call it my_arr and iterate over each element of arr taking its value and mapping it to the corresponding index of my_arr. Let me just show you and it should make sense - my_arr = [0,1,2,nil,4,nil,nil,7] now you just scan my_arr for a nil value and the index of that nil value is not in the original arr.  I'm not sure this answer is completely satisfying, because if you have a couple of very large numbers you are creating a very memory intense array. However, it is a good demonstration of the pigeonhole principal at work, after each iteration of arr you are squeezing or "pigeonholeing(sp?)" the numbers that are not in arr.
 
 ### Function Parameters in JavaScript
 
